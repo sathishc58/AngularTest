@@ -28,7 +28,7 @@ pipeline {
             steps {
                 print "Build numebr is " +  buildNumber
                 git branch: "${params.branchName}",
-                  credentialsId: '073c22ea-f05b-409d-99a4-5ace933cb7ab',
+                  credentialsId: '72f13a10-4b6e-43c0-91b8-d6c0395687bf',
                   url:  'https://github.com/sathishc58/AngularTest.git'
             }
         }
