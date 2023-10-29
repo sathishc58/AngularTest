@@ -58,20 +58,20 @@ pipeline {
                 }
             }
         }
-        /* stage('Copy deployment manifest') {
+        stage('Copy deployment manifest') {
             steps {
-                sh """cp /tmp/nginx.json ${WORKSPACE}/nginx.json
-                  chown jenkins:jenkins ${WORKSPACE}/nginx.json
-                  chmod 755 ${WORKSPACE}/nginx.json"""
+                sh """cp /tmp/angui.json ${WORKSPACE}/angui.json
+                  chown jenkins:jenkins ${WORKSPACE}/angui.json
+                  chmod 755 ${WORKSPACE}/angui.json"""
             }
         }
         stage('Deploy to ECS') {
             steps {
                 
-                sh """aws ecs register-task-definition --cli-input-json file://${WORKSPACE}/nginx.json
+                sh """aws ecs register-task-definition --cli-input-json file://${WORKSPACE}/angui.json
                 aws ecs list-task-definitions
-                aws ecs run-task --cluster default --task-definition sample:9 --count 1"""
+                aws ecs run-task --cluster default --task-definition angui:1 --count 1"""
             }
-        } */
+        }
     }
 }
