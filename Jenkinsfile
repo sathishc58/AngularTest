@@ -27,9 +27,12 @@ pipeline {
         stage('Cloning Repo') {
             steps {
                 print "Build numebr is " +  buildNumber
-                git branch: "${params.branchName}",
-                  credentialsId: '72f13a10-4b6e-43c0-91b8-d6c0395687bf',
-                  url:  'https://github.com/sathishc58/AngularTest.git'
+                script {
+                    echo "Git paramater is ${params.branchName}"
+                    git branch: "${params.branchName}",
+                        credentialsId: '72f13a10-4b6e-43c0-91b8-d6c0395687bf',
+                        url:  'https://github.com/sathishc58/AngularTest.git'
+                }
             }
         }
         stage('Login to ECR') {
