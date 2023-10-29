@@ -30,7 +30,7 @@ pipeline {
                 script {
                     echo "Git paramater is ${params.branchName}"
                     // git branch: "${params.branchName}", credentialsId: '72f13a10-4b6e-43c0-91b8-d6c0395687bf', url: 'https://github.com/sathishc58/AngularTest.git'
-                    git branch: 'master', credentialsId: '72f13a10-4b6e-43c0-91b8-d6c0395687bf', url: 'https://github.com/sathishc58/AngularTest.git'
+                    git branch: 'origin/master', credentialsId: '72f13a10-4b6e-43c0-91b8-d6c0395687bf', url: 'https://github.com/sathishc58/AngularTest.git'
                 }
             }
         }
