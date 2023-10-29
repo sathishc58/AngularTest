@@ -70,7 +70,7 @@ pipeline {
                 
                 sh """aws ecs register-task-definition --cli-input-json file://${WORKSPACE}/angui.json
                 aws ecs list-task-definitions
-                aws ecs run-task --cluster TestCluster --task-definition anguiex:1 --count 1"""
+                aws ecs run-task --cluster TestCluster --task-definition angui:11 --count 1"""
             }
         }
     }
